@@ -48,3 +48,6 @@ library(tidyr)
 data %>%
   group_by(user, activity) %>%
   summarise_all(mean) -> result
+
+# Save the result
+write.table(result, 'result.txt', row.names = F)

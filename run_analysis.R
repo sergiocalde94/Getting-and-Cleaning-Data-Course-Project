@@ -38,7 +38,7 @@ data$activity <- activity_labels$name[data$activity]
 ## 4. Appropriately labels the data set with descriptive variable names.
 
 # For consistency we will transform to lower case all variables names
-names(data) <- tolower(names(data))
+data$activity <- tolower(data$activity)
 
 ## 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
@@ -47,5 +47,4 @@ library(tidyr)
 # We use dplyr + tidyr
 data %>%
   group_by(user, activity) %>%
-  summarise_all(mean) %>%
-  gather(measurement, mean, -activity, -user) -> result
+  summarise_all(mean) -> result

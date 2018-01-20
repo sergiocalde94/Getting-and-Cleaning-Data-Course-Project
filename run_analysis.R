@@ -29,7 +29,7 @@ library(dplyr)
 
 # Hadley´s library dplyr is perfect for this purpose, we select the requested columns
 data %>%
-  select(contains(".mean."), contains('.std.')) -> mean_and_std_data
+  select(user, contains(".mean."), contains('.std.'), activity) -> data
 
 ## 3. Uses descriptive activity names to name the activities in the data set
 

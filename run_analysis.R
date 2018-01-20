@@ -35,7 +35,10 @@ data %>%
 
 data$activity <- activity_labels$name[data$activity]
 
-## 4. Appropriately labels the data set with descriptive variable names. [DONE]
+## 4. Appropriately labels the data set with descriptive variable names.
+
+# For consistency we will transform to lower case all variables names
+names(data) <- tolower(names(data))
 
 ## 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
